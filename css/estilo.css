@@ -1,227 +1,144 @@
-:root {
-    /* Paleta extraída da Logo CJDEV360 */
-    --cor-fundo: #F7F0E5;
-    /* O tom creme/bege do fundo da logo */
-    --cor-texto-principal: #0F2537;
-    /* O Azul marinho escuro do texto da logo */
-    --cor-destaque-verde: #3A8E7B;
-    /* O Verde/Teal das barras do gráfico */
-    --cor-destaque-circuito: #4CAF50;
-    /* O Verde do circuito */
-    --cor-destaque-luz: #F4B400;
-    /* O Amarelo da lâmpada (para detalhes) */
-    --cor-branco: #FFFFFF;
-    --sombra-card: 0 10px 25px rgba(15, 37, 55, 0.1);
-    /* Sombra elegante */
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+:root {
+    --cor01: #f7f0e5; /* Fundo */
+    --cor02: #062c42; /* Rodapé / Texto Escuro */
+    --cor03: #308a51; /* Botão Hover */
+    --cor04: #0b6879; /* Botão Normal */
+    --cor05: #2b898e; /* Cartão Fundo */
+    --cor06: #f6b737; /* Links Rodapé */
+    --cor07: #f59a3d;
+    --cor08: black;
+
 }
 
 body {
-    background-color: var(--cor-fundo);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--cor-texto-principal);
-    line-height: 1.6;
+    background-color: var(--cor01);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    color: black;
 }
 
-/* CABEÇALHO */
-#cabecalho {
-    width: 100%;
-    padding: 15px 5%;
-    /* Espaçamento lateral responsivo */
-    background: var(--cor-fundo);
-    /* Fundo igual ao da logo para mesclar */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #328C52;
-    /* Linha sutil */
+/* --- TOPO (LOGO + DATA) --- */
+header {
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    flex-shrink: 0;
+    /* LINHA DIVISÓRIA AQUI: */
+    border-bottom: 3px solid var(--cor05); 
+    margin-bottom: 20px; /* Espaço entre a linha e o conteúdo de baixo */
 }
 
 #logo {
-    height: 160px;
-    /* Tamanho ajustado */
-    width: auto;
-    border-radius: 50%
-        /* Se a logo tiver fundo, isso ajuda a misturar, se for PNG transparente, fica ótimo também */
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Margem embaixo do logo para separar da data */
 }
 
-#titulo_site {
-    font-size: 1.5rem;
-    color: var(--cor-texto-principal);
-    font-weight: 800;
-    /* Extra bold para combinar com a logo */
-    letter-spacing: -0.5px;
-    display: none;
-    /* Ocultamos o texto pois a logo já diz o nome, fica mais limpo. Se quiser mostrar, remova esta linha */
-}
-
-#data_hora {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #073040;
-    background: rgba(58, 142, 123, 0.1);
-    padding: 8px 16px;
-    border-radius: 20px;
-}
-
-/* CONTEÚDO PRINCIPAL */
-#conteudo_principal {
-    flex: 1;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-}
-
-/* REDES SOCIAIS */
-#titulo_redes {
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    color: var(--cor-texto-principal);
-}
-
-.caixa_redes {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-/* CARD DE REDE SOCIAL (Design Profissional) */
-.cartao_rede {
-    background: #F2ECE4;
-    width: 260px;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: var(--sombra-card);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.02);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Detalhe colorido no topo do card */
-.cartao_rede::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: #F2B138
-}
-
-.cartao_rede:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(15, 37, 55, 0.15);
-}
-
-.img_rede {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.handle {
-    font-weight: 700;
-    color: var(--cor-texto-principal);
-    margin-bottom: 25px;
+/* Estilo do Relógio */
+#relogio {
     font-size: 1.1rem;
-}
-
-/* BOTÃO DE AÇÃO */
-.botao_ir {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 12px 0;
-    background-color: #0D6973;
-    /* Azul escuro da marca */
-    color: var(--cor-branco);
-    text-decoration: none;
-    border-radius: 50px;
-    /* Formato pílula */
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(15, 37, 55, 0.2);
-}
-
-.botao_ir:hover {
-    background-color: var(--cor-destaque-verde);
-    /* Muda para o Teal da logo */
-    box-shadow: 0 6px 15px rgba(58, 142, 123, 0.3);
-}
-
-/* SEÇÃO FUTURAS */
-#secao_futuras {
-    margin-top: 80px;
-    padding-top: 40px;
-
-
-}
-
-#secao_futuras h2 {
-    font-size: 1.5rem;
-    color: var(--cor-destaque-verde);
-}
-
-#secao_futuras p {
-    color: #666;
+    color: var(--cor08);
+    font-weight: bold;
     margin-top: 10px;
 }
 
-/* RODAPÉ */
-#rodape {
-    width: 100%;
-    background: var(--cor-texto-principal);
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: auto;
+/* --- ÁREA PRINCIPAL --- */
+main {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#rodape a {
-    color: var(--cor-destaque-luz);
-    /* Amarelo da lâmpada para destaque */
+/* --- CONTEINER DOS CARTÕES --- */
+.caixa-redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* --- ESTILO DO CARTÃO INDIVIDUAL --- */
+.cartao-rede {
+    background-color: var(--cor05);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.cartao-rede:hover {
+    transform: translateY(-5px);
+}
+
+.icone-rede {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+/* --- BOTÕES --- */
+.botao-ir {
+    background-color: var(--cor04);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.botao-ir:hover {
+    background-color: var(--cor03);
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--cor02);
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: var(--cor06);
     text-decoration: none;
     font-weight: bold;
 }
 
-#rodape a:hover {
-    color: var(--cor-branco);
-    text-decoration: underline;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 600px) {
-    #cabecalho {
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .caixa-redes {
         flex-direction: column;
-        gap: 15px;
-        padding-bottom: 20px;
+        align-items: center;
     }
 
-    #titulo_redes {
-        font-size: 1.8rem;
-    }
-
-    .cartao_rede {
-        width: 100%;
-        max-width: 320px;
+    .cartao-rede {
+        width: 80%;
+        max-width: 350px;
     }
 }
