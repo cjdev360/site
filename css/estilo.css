@@ -15,7 +15,6 @@
     --cor06: #f6b737; /* Links Rodapé */
     --cor07: #f59a3d;
     --cor08: black;
-
 }
 
 body {
@@ -32,15 +31,16 @@ header {
     padding: 20px 20px 20px 20px;
     flex-shrink: 0;
     /* LINHA DIVISÓRIA AQUI: */
-    border-bottom: 3px solid var(--cor05); 
-    margin-bottom: 20px; /* Espaço entre a linha e o conteúdo de baixo */
+    border-bottom: 3px solid var(--cor06); 
+    margin-bottom: 20px; 
 }
 
 #logo {
     max-width: 180px;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto; /* Margem embaixo do logo para separar da data */
+    /* ALTERADO: Margem inferior ZERADA para colar na data */
+    margin: 0 auto 0 auto; 
 }
 
 /* Estilo do Relógio */
@@ -48,7 +48,9 @@ header {
     font-size: 1.1rem;
     color: var(--cor08);
     font-weight: bold;
-    margin-top: 10px;
+    /* ALTERADO: Margem zero e altura de linha compacta */
+    margin-top: 0; 
+    line-height: 1;
 }
 
 /* --- ÁREA PRINCIPAL --- */
