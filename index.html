@@ -3,39 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cjdev360</title>
+    <title>CJDEV360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="shortcut icon" href="favicom/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header id="topo">
-        <img src="imagens/logo.png" alt="logo" id="logo">
-        <div id="relogio">Carregando data...</div>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="CJDEV360 Logo" id="logo">
+        </div>
+        <div id="relogio-container">
+            <span id="data-hora">Carregando...</span>
+        </div>
     </header>
 
     <main id="principal">
-        <div class="caixa-redes">
+        <section class="caixa-redes">
             
-            <div class="cartao-rede">
-                <img src="imagens/icone-instagram.png" alt="icone-instagram" class="icone-rede">
-                <a href="https://www.instagram.com/cjdev_360" target="_blank" rel="external" class="botao-ir">Siga-nos</a>
-            </div>
+            <article class="cartao-rede instagram">
+                <div class="icone-container">
+                    <img src="imagens/icone-instagram.png" alt="Instagram" class="icone-rede">
+                </div>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/cjdev_360" target="_blank" rel="external" class="botao-ir">Seguir</a>
+            </article>
 
-            <div class="cartao-rede">
-                <img src="imagens/icone-threads.png" alt="icone-threads" class="icone-rede">
-                <a href="https://www.threads.net/@cjdev_360" target="_blank" rel="external" class="botao-ir">Siga-nos</a>
-            </div>
+            <article class="cartao-rede threads">
+                <div class="icone-container">
+                    <img src="imagens/icone-threads.png" alt="Threads" class="icone-rede">
+                </div>
+                 <h3>Threads</h3>
+                <a href="https://www.threads.com/@cjdev_360" target="_blank" rel="external" class="botao-ir">Seguir</a>
+            </article>
 
-            <div class="cartao-rede">
-                <img src="imagens/icone-youtube.png" alt="icone-youtube" class="icone-rede">
-                <a href="https://www.youtube.com/@cjdev360" target="_blank" rel="external" class="botao-ir">Inscreva-se</a>
-            </div>
+            <article class="cartao-rede youtube">
+                <div class="icone-container">
+                    <img src="imagens/icone-youtube.png" alt="YouTube" class="icone-rede">
+                </div>
+                 <h3>YouTube</h3>
+                <a href="https://www.youtube.com/@cjdev360" target="_blank" rel="external" class="botao-ir">Inscrever-se</a>
+            </article>
                      
-        </div>
+        </section>
+
+        <div class="espaco-futuro"></div>
+
     </main>
 
     <footer id="rodape">
-        <p>&copy; 2025 CJDEV360 | <a href="mailto:cjdev360@gmail.com">Fale Conosco</a></p>
+        <p>&copy; 2025 CJDEV360. Todos os direitos reservados.</p>
+        <p><a href="mailto:cjdev360@gmail.com" class="link-contato">Fale Conosco</a></p>
     </footer>
 
     <script src="js/script.js"></script>

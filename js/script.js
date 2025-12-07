@@ -1,22 +1,29 @@
 function atualizarRelogio() {
     const agora = new Date();
     
-    // Configuração para mostrar dia da semana e data
-    const opcoes = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
-    const data = agora.toLocaleDateString('pt-BR', opcoes);
+    const opcoesData = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
     
-    // Configuração para mostrar a hora
-    const hora = agora.toLocaleTimeString('pt-BR');
+    // Configuração para hora e minuto
+    const opcoesHora = {
+        hour: '2-digit',
+        minute: '2-digit'
+    };
+
+    let dataFormatada = agora.toLocaleDateString('pt-BR', opcoesData);
+    const horaFormatada = agora.toLocaleTimeString('pt-BR', opcoesHora);
     
-    // Junta tudo e coloca na tela (ex: Sábado, 06/12/2025 | 13:45:10)
-    // O 'charAt(0).toUpperCase' serve apenas para deixar a primeira letra do dia maiúscula
-    const dataFormatada = data.charAt(0).toUpperCase() + data.slice(1);
+    // Primeira letra maiúscula
+    dataFormatada = dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
     
-    document.getElementById('relogio').textContent = `${dataFormatada} | ${hora}`;
+    const textoFinal = `${dataFormatada} <span style="margin: 0 10px; opacity: 0.5;">|</span> ${horaFormatada}`;
+    
+    document.getElementById('data-hora').innerHTML = textoFinal;
 }
 
-// Atualiza o relógio a cada 1000 milissegundos (1 segundo)
 setInterval(atualizarRelogio, 1000);
-
-// Roda a função assim que carrega para não ficar em branco no primeiro segundo
 atualizarRelogio();
